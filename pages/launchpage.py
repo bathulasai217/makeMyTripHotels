@@ -27,7 +27,8 @@ class LaunchPage(BaseDriver):
     txt_click_adult_xpath = "//span[contains(@data-testid,'adult_count')]"
     txt_click_childc_xpath = "//span[contains(@data-testid,'children_count')]"
     txt_nfchildrens_css = "ul.gstSlct__list>li"
-    txt_search_xpath = "//button[@class='primaryBtn btnApplyNew pushRight capText']"
+    txt_apply_xpath = "//button[@class = 'primaryBtn btnApplyNew pushRight capText']"
+    txt_search_xpath = "//button[@id='hsw_search_button']"
 
     def __init__(self,driver):
         super().__init__(driver)
@@ -80,8 +81,13 @@ class LaunchPage(BaseDriver):
         cc = self.findelement(By.XPATH,self.txt_click_childc_xpath).click()
         return cc
     def clickOnsearch(self):
-        self.findelement(By.XPATH,self.txt_search_xpath).click()
+        ele = self.findelement(By.XPATH,self.txt_search_xpath).click()
         time.sleep(5)
+        return ele
+    def clickOnApply(self):
+        ele = self.findelement(By.XPATH,self.txt_apply_xpath).click()
+        return ele
+
 
 
 

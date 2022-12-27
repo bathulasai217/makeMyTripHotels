@@ -31,6 +31,6 @@ class BaseDriver():
         sc = self.save_screenshot(location)
         return sc
     def wait_for_presence_all_elements(self,locator_type, locator):
-        wait = WebDriverWait(self.driver,10)
+        wait = WebDriverWait(self.driver,100)
         ele = wait.until(EC.presence_of_all_elements_located((locator_type,locator)))
         return ele

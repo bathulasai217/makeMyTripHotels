@@ -62,9 +62,21 @@ for children in NoOfChildrens:
         break
 driver.find_element(By.XPATH,"//button[@class='primaryBtn btnApplyNew pushRight capText']").click()
 time.sleep(2)
-driver.find_element(By.CSS_SELECTOR,"div.slctTrpTyp").click()
-ele = driver.find_elements(By.CSS_SELECTOR,"div.slctTrpTyp>ul>li")
-for el in ele:
-    print(el.text)
+driver.find_element(By.CSS_SELECTOR,"button#hsw_search_button").click()
+#driver.find_element(By.CSS_SELECTOR,"p.slctTrpTyp__selected").click()
+# driver.find_element(By.CSS_SELECTOR,"div[id='listingView'] li:nth-child(1)").click()
+# time.sleep(20)
+# driver.find_element(By.CSS_SELECTOR,"div.slctTrpTyp").click()
+# ele = driver.find_elements(By.CSS_SELECTOR,"div.slctTrpTyp>ul>li")
+# for el in ele:
+#     print(el.text)
+hotels = driver.find_elements(By.CSS_SELECTOR,"p#hlistpg_hotel_name")
+for i in hotels:
+    time.sleep(1)
+    print(i.text)
+prices = driver.find_elements(By.CSS_SELECTOR,"p#hlistpg_hotel_shown_price")
+for i in prices:
+    time.sleep(1)
+    print(i.text)
 
 
